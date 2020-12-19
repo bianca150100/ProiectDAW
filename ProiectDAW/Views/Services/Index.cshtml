@@ -1,0 +1,43 @@
+﻿@using ProiectDAW.Models
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista servicii: </h2>
+
+<a href="/services/create" class="btn btn-success">Adauga serviciu clinica</a>
+
+<br />
+
+<br />
+
+<br />
+
+@{
+    var sList = ViewData["services"] as List<Service>;
+
+    foreach (var serv in sList)
+    {
+    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+
+        @Html.Label("First Name", "First Name:")
+        <p>@serv.Name</p>
+
+        <br />
+
+        @Html.Label("Last Name", "Last Name:")
+        <p>@serv.Pret</p>
+
+
+        <a href="/services/update/@serv.Id" class="btn btn-warning">Editare</a>
+
+        <br />
+
+        <a href="/services/delete/@serv.Id" class="btn btn-danger">Sterge</a>
+
+    </div>
+
+    }
+}
