@@ -25,5 +25,11 @@ namespace ProiectDAW.Models
 
         [Required]
         public string PhoneNumber { get; set; }
+
+        [Required]
+        public string Function { get; set; }
+
+        [Required]
+        public string Description { get; set; }
     }
 }

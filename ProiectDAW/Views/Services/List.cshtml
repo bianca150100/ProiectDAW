@@ -1,0 +1,37 @@
+﻿@using ProiectDAW.Models
+
+@{
+    ViewBag.Title = "List";
+}
+<br />
+<br />
+<br />
+
+<h1 style="color: #862d2d;">LISTA PRETURI</h1>
+
+<style>
+    body {
+        background-image: url('../../Images/Back.jpg');
+    }
+</style>
+
+<br />
+<br />
+<br />
+@{
+    var sList = ViewData["services"] as List<Service>;
+    <table class="table table-bordered table-responsive table-hover">
+        <tr>
+            <th>Denumire </th>
+            <th>Pret</th>
+        </tr>
+
+        @foreach (var serv in sList)
+        {
+            <tr>
+                <td>@serv.Name</td>
+                <td>@serv.Pret</td>
+            </tr>
+        }
+    </table>
+}

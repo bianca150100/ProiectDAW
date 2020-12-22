@@ -168,7 +168,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactViewController.cs" />
     <Compile Include="Controllers\DoctorsController.cs" />
+    <Compile Include="Controllers\GeneralServiceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
@@ -185,9 +187,19 @@
     <Compile Include="Migrations\202012191251306_NewTable_Servicies.Designer.cs">
       <DependentUpon>202012191251306_NewTable_Servicies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012200737404__NewColumnDoctors.cs" />
+    <Compile Include="Migrations\202012200737404__NewColumnDoctors.Designer.cs">
+      <DependentUpon>202012200737404__NewColumnDoctors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012211813517__NewTableGeneralServ.cs" />
+    <Compile Include="Migrations\202012211813517__NewTableGeneralServ.Designer.cs">
+      <DependentUpon>202012211813517__NewTableGeneralServ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ContactViewModel.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\GeneralService.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Service.cs" />
@@ -208,6 +220,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Back.jpg" />
+    <Content Include="Images\back2.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -266,6 +280,14 @@
     <Content Include="Views\Doctors\Details.cshtml" />
     <Content Include="Views\Services\Create.cshtml" />
     <Content Include="Views\Services\Update.cshtml" />
+    <Content Include="Views\Doctors\List.cshtml" />
+    <Content Include="Views\Services\List.cshtml" />
+    <Content Include="Views\ContactView\Index.cshtml" />
+    <Content Include="Views\GeneralService\Create.cshtml" />
+    <Content Include="Views\GeneralService\Index.cshtml" />
+    <Content Include="Views\GeneralService\List.cshtml" />
+    <Content Include="Views\GeneralService\Update.cshtml" />
+    <Content Include="Views\GeneralService\ListCateg.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012191236147_NewTable_Doctors.resx">
@@ -273,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012191251306_NewTable_Servicies.resx">
       <DependentUpon>202012191251306_NewTable_Servicies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012200737404__NewColumnDoctors.resx">
+      <DependentUpon>202012200737404__NewColumnDoctors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012211813517__NewTableGeneralServ.resx">
+      <DependentUpon>202012211813517__NewTableGeneralServ.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -8,13 +8,13 @@ using System.Web.Mvc;
 
 namespace ProiectDAW.Controllers
 {
-    // poate fi accesat doar de catre Admin
-    [Authorize(Roles = "Admin")]
     public class DoctorsController : Controller
     {
         
         private CliniqueContext context = new CliniqueContext();
 
+        // poate fi accesat doar de catre Admin
+        [Authorize(Roles = "Admin")]
         // GET: /Doctors/index
         [HttpGet]
         public ActionResult Index()
@@ -23,6 +23,8 @@ namespace ProiectDAW.Controllers
             return View();
         }
 
+        // poate fi accesat doar de catre Admin
+        [Authorize(Roles = "Admin")]
         // GET: /Doctors/create
         [HttpGet]
         public ActionResult Create()
@@ -30,6 +32,8 @@ namespace ProiectDAW.Controllers
             return View();
         }
 
+        // poate fi accesat doar de catre Admin
+        [Authorize(Roles = "Admin")]
         // POST: /Doctors/create
         [HttpPost]
         public ActionResult Create(Doctor doctor)
@@ -46,6 +50,8 @@ namespace ProiectDAW.Controllers
             return View(doctor);
         }
 
+        // poate fi accesat doar de catre Admin
+        [Authorize(Roles = "Admin")]
         // GET: /Doctors/update/{id}
         [HttpGet]
         public ActionResult Update(int id)
@@ -60,6 +66,8 @@ namespace ProiectDAW.Controllers
             return View(doctor);
         }
 
+        // poate fi accesat doar de catre Admin
+        [Authorize(Roles = "Admin")]
         // POST: /Doctors/update
         [HttpPost]
         public ActionResult Update(Doctor doctor)
@@ -80,6 +88,8 @@ namespace ProiectDAW.Controllers
                     oldDoct.Email = doctor.Email;
                     oldDoct.PhoneNumber = doctor.PhoneNumber;
                     oldDoct.Experience = doctor.Experience;
+                    oldDoct.Description = doctor.Description;
+                    oldDoct.Function = doctor.Function;
 
                     TryUpdateModel(oldDoct);
 
@@ -96,6 +106,8 @@ namespace ProiectDAW.Controllers
             return View(doctor);
         }
 
+        // poate fi accesat doar de catre Admin
+        [Authorize(Roles = "Admin")]
         // GET: /Doctors/delete/{id}
         [HttpGet]
         public ActionResult Delete(int id)
@@ -114,7 +126,9 @@ namespace ProiectDAW.Controllers
             return RedirectToAction("Index", "Doctors");
         }
 
-        // GET: /authors/details/{id}
+        // poate fi accesat doar de catre Admin
+        [Authorize(Roles = "Admin")]
+        // GET: /doctors/details/{id}
         [HttpGet]
         public ActionResult Details(int id)
         {
@@ -127,5 +141,13 @@ namespace ProiectDAW.Controllers
 
             return View(doctor);
         }
+
+        public ActionResult List()
+        {
+            ViewData["doctors"] = context.Doctors.ToList();
+            return View();
+        }
+
+
     }
 }

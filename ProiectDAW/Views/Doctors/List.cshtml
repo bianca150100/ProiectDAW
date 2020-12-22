@@ -1,0 +1,34 @@
+﻿@using ProiectDAW.Models
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<style>
+    body {
+        background-image: url('../../Images/Back.jpg');
+    }
+</style>
+
+
+<h1 style="color: #862d2d;">PERSONAL MEDICAL</h1>
+
+<br />
+
+@{
+    var doctorsList = ViewData["doctors"] as List<Doctor>;
+
+    foreach (var doctor in doctorsList)
+    {
+        <div style="border-style: dotted;" class="col-md-6">
+            <p style="font-size: 200%;"> - DR. @doctor.FirstName @doctor.LastName </p>
+            <p> @doctor.Function </p>
+            <hr>
+            <p> @doctor.Description</p>
+            <p style="color: #c65353;"> Phone: @doctor.PhoneNumber</p>
+            <p style="color: blue;"> E-mail: @doctor.Email </p>
+        </div>
+
+    }
+}

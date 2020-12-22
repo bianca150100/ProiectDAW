@@ -109,3 +109,5 @@ C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.pdb
 C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.NewTable_Doctors.resources
 C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.csproj.GenerateResource.cache
 C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.NewTable_Servicies.resources
+C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations._NewColumnDoctors.resources
+C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations._NewTableGeneralServ.resources
