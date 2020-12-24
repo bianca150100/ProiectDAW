@@ -168,46 +168,67 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppointmentsController.cs" />
     <Compile Include="Controllers\ContactViewController.cs" />
-    <Compile Include="Controllers\DoctorsController.cs" />
+    <Compile Include="Controllers\MediciController.cs" />
     <Compile Include="Controllers\GeneralServiceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PacientsController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Data\CliniqueContext.cs" />
+    <Compile Include="Data\ClinicaContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012191236147_NewTable_Doctors.cs" />
-    <Compile Include="Migrations\202012191236147_NewTable_Doctors.Designer.cs">
-      <DependentUpon>202012191236147_NewTable_Doctors.cs</DependentUpon>
+    <Compile Include="Migrations\202012221610044_InitialCreate.cs" />
+    <Compile Include="Migrations\202012221610044_InitialCreate.Designer.cs">
+      <DependentUpon>202012221610044_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012191251306_NewTable_Servicies.cs" />
-    <Compile Include="Migrations\202012191251306_NewTable_Servicies.Designer.cs">
-      <DependentUpon>202012191251306_NewTable_Servicies.cs</DependentUpon>
+    <Compile Include="Migrations\202012221611277_NewTables.cs" />
+    <Compile Include="Migrations\202012221611277_NewTables.Designer.cs">
+      <DependentUpon>202012221611277_NewTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012200737404__NewColumnDoctors.cs" />
-    <Compile Include="Migrations\202012200737404__NewColumnDoctors.Designer.cs">
-      <DependentUpon>202012200737404__NewColumnDoctors.cs</DependentUpon>
+    <Compile Include="Migrations\202012221632001_NewCol.cs" />
+    <Compile Include="Migrations\202012221632001_NewCol.Designer.cs">
+      <DependentUpon>202012221632001_NewCol.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012211813517__NewTableGeneralServ.cs" />
-    <Compile Include="Migrations\202012211813517__NewTableGeneralServ.Designer.cs">
-      <DependentUpon>202012211813517__NewTableGeneralServ.cs</DependentUpon>
+    <Compile Include="Migrations\202012221632515_NewCol2.cs" />
+    <Compile Include="Migrations\202012221632515_NewCol2.Designer.cs">
+      <DependentUpon>202012221632515_NewCol2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012221705190_RemoveCol.cs" />
+    <Compile Include="Migrations\202012221705190_RemoveCol.Designer.cs">
+      <DependentUpon>202012221705190_RemoveCol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012221810191_UpdataAP.cs" />
+    <Compile Include="Migrations\202012221810191_UpdataAP.Designer.cs">
+      <DependentUpon>202012221810191_UpdataAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012221822405_UpdataAP2.cs" />
+    <Compile Include="Migrations\202012221822405_UpdataAP2.Designer.cs">
+      <DependentUpon>202012221822405_UpdataAP2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContactViewModel.cs" />
-    <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\Esential.cs" />
+    <Compile Include="Models\Medic.cs" />
     <Compile Include="Models\GeneralService.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Pacient.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Service.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ClinicaDatabase.mdf" />
+    <Content Include="App_Data\ClinicaDatabase_log.ldf">
+      <DependentUpon>ClinicaDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\CliniqueDatabase.mdf" />
     <Content Include="App_Data\CliniqueDatabase_log.ldf">
       <DependentUpon>CliniqueDatabase.mdf</DependentUpon>
@@ -273,14 +294,14 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Account\Delete.cshtml" />
-    <Content Include="Views\Doctors\Index.cshtml" />
+    <Content Include="Views\Medici\Index.cshtml" />
     <Content Include="Views\Services\Index.cshtml" />
-    <Content Include="Views\Doctors\Create.cshtml" />
-    <Content Include="Views\Doctors\Update.cshtml" />
-    <Content Include="Views\Doctors\Details.cshtml" />
+    <Content Include="Views\Medici\Create.cshtml" />
+    <Content Include="Views\Medici\Update.cshtml" />
+    <Content Include="Views\Medici\Details.cshtml" />
     <Content Include="Views\Services\Create.cshtml" />
     <Content Include="Views\Services\Update.cshtml" />
-    <Content Include="Views\Doctors\List.cshtml" />
+    <Content Include="Views\Medici\List.cshtml" />
     <Content Include="Views\Services\List.cshtml" />
     <Content Include="Views\ContactView\Index.cshtml" />
     <Content Include="Views\GeneralService\Create.cshtml" />
@@ -288,20 +309,15 @@
     <Content Include="Views\GeneralService\List.cshtml" />
     <Content Include="Views\GeneralService\Update.cshtml" />
     <Content Include="Views\GeneralService\ListCateg.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012191236147_NewTable_Doctors.resx">
-      <DependentUpon>202012191236147_NewTable_Doctors.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012191251306_NewTable_Servicies.resx">
-      <DependentUpon>202012191251306_NewTable_Servicies.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012200737404__NewColumnDoctors.resx">
-      <DependentUpon>202012200737404__NewColumnDoctors.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012211813517__NewTableGeneralServ.resx">
-      <DependentUpon>202012211813517__NewTableGeneralServ.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Views\Pacients\Create.cshtml" />
+    <Content Include="Views\Pacients\Details.cshtml" />
+    <Content Include="Views\Pacients\Index.cshtml" />
+    <Content Include="Views\Pacients\List.cshtml" />
+    <Content Include="Views\Pacients\Update.cshtml" />
+    <Content Include="Views\Appointments\Create.cshtml" />
+    <Content Include="Views\Appointments\Index.cshtml" />
+    <Content Include="Views\Appointments\Myappointments.cshtml" />
+    <Content Include="Views\Appointments\Calendar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -317,6 +333,29 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202012221610044_InitialCreate.resx">
+      <DependentUpon>202012221610044_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012221611277_NewTables.resx">
+      <DependentUpon>202012221611277_NewTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012221632001_NewCol.resx">
+      <DependentUpon>202012221632001_NewCol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012221632515_NewCol2.resx">
+      <DependentUpon>202012221632515_NewCol2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012221705190_RemoveCol.resx">
+      <DependentUpon>202012221705190_RemoveCol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012221810191_UpdataAP.resx">
+      <DependentUpon>202012221810191_UpdataAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012221822405_UpdataAP2.resx">
+      <DependentUpon>202012221822405_UpdataAP2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

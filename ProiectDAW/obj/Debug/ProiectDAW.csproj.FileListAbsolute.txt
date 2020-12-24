@@ -106,8 +106,11 @@ C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.csproj.Co
 C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.csproj.CopyComplete
 C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.dll
 C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.pdb
-C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.NewTable_Doctors.resources
+C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.InitialCreate.resources
 C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.csproj.GenerateResource.cache
-C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.NewTable_Servicies.resources
-C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations._NewColumnDoctors.resources
-C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations._NewTableGeneralServ.resources
+C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.NewTables.resources
+C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.NewCol.resources
+C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.NewCol2.resources
+C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.RemoveCol.resources
+C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.UpdataAP.resources
+C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.UpdataAP2.resources

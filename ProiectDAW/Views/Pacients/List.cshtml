@@ -1,0 +1,31 @@
+﻿@using ProiectDAW.Models
+
+
+@{
+    ViewBag.Title = "Preturi";
+}
+
+<style>
+    body {
+        background-image: url('../../Images/Back.jpg');
+    }
+</style>
+
+
+<h1 style="color: #862d2d;">PACIENTI</h1>
+
+<br />
+
+@{
+    var pacientsList = ViewData["pacients"] as List<Pacient>;
+
+    foreach (var pacient in pacientsList)
+    {
+        <div style="border-style: dotted;" class="col-md-6">
+            <p style="font-size: 200%;"> - @pacient.FirstName @pacient.LastName </p>
+            <p> @pacient.Email </p>
+            <hr>
+        </div>
+
+    }
+}

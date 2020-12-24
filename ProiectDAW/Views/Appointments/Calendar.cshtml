@@ -1,0 +1,43 @@
+﻿@using ProiectDAW.Models
+<head>
+    <meta charset='utf-8' />
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.5.0/main.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.5.0/main.js'></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'timeGridDay'
+
+            });
+            calendar.render();
+            $.getJSON('https://localhost:44366/Appointments/All', function (data) {
+                var len = data.length;
+                for (var i = 0; i < len; i++) {
+                    var date = data[i].Data + "T" + data[i].Ora + ":00:00";
+                    var titlu = "Programare: medic" + " " + data[i].Nume;
+                    calendar.addEvent({
+                        title: titlu,
+                        start: date
+                    });
+                }
+            });
+
+        });
+
+    </script>
+</head>
+
+<br />
+<br />
+
+<p> Daca doriti o noua programare, alegeti unul din intervalele libere la medicul dorit! Multumim!</p>
+<a href="/appointments/create" class="btn btn-warning">Adauga programare</a>
+
+<br />
+<br />
+
+<body>
+    <div id='calendar'></div>
+</body>

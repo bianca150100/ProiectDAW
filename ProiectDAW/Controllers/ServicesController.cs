@@ -11,7 +11,7 @@ namespace ProiectDAW.Controllers
     
     public class ServicesController : Controller
     {
-        private CliniqueContext context = new CliniqueContext();
+        private ClinicaContext context = new ClinicaContext();
 
         // poate fi accesat doar de catre Admin
         [Authorize(Roles = "Admin")]

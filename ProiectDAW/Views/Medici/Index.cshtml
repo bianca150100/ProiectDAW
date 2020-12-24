@@ -1,0 +1,52 @@
+﻿@using ProiectDAW.Models
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista doctori: </h2>
+
+<a href="/medici/create" class="btn btn-success">Adauga doctor clinica</a>
+
+<br />
+
+<br />
+
+<br />
+
+@{
+    var doctorsList = ViewData["medici"] as List<Medic>;
+
+    foreach (var doctor in doctorsList)
+    {
+    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+
+        @Html.Label("First Name", "First Name:")
+        <p>@doctor.FirstName</p>
+
+        <br />
+
+        @Html.Label("Last Name", "Last Name:")
+        <p>@doctor.LastName</p>
+
+        @using (Html.BeginForm(actionName: "Details",
+            controllerName: "Medici",
+            method: FormMethod.Get,
+            routeValues: new { id = doctor.MedicId }))
+        {
+            <button class="btn btn-info">Detalii</button>
+
+        }
+
+
+        <a href="/medici/update/@doctor.MedicId" class="btn btn-warning">Editare</a>
+
+        <br />
+
+        <a href="/medici/delete/@doctor.MedicId" class="btn btn-danger">Sterge</a>
+
+    </div>
+
+    }
+}
