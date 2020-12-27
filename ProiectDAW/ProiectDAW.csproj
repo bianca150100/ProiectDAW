@@ -212,6 +212,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContactViewModel.cs" />
+    <Compile Include="Models\CustomValidation\DataValidation.cs" />
+    <Compile Include="Models\CustomValidation\OraValidation.cs" />
     <Compile Include="Models\Esential.cs" />
     <Compile Include="Models\Medic.cs" />
     <Compile Include="Models\GeneralService.cs" />
@@ -243,6 +245,14 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\Back.jpg" />
     <Content Include="Images\back2.jpg" />
+    <Content Include="Images\sursa1.jpg" />
+    <Content Include="Images\sursa2.png" />
+    <Content Include="Images\sursa3.png" />
+    <Content Include="Images\sursa4.png" />
+    <Content Include="Images\sursa5.jpg" />
+    <Content Include="Images\sursa6.jpg" />
+    <Content Include="Images\sursa7.jpg" />
+    <Content Include="Images\sursa8.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />

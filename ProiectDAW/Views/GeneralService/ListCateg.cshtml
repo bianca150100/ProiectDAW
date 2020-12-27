@@ -7,9 +7,10 @@
 <br />
 <br />
 
-<h1 style="color: #862d2d;">LISTA PRETURI</h1>
+<h1 class="jumbotron text-center" style="color: #862d2d; font-size: 240%">LISTA PRETURI</h1>
 
 <style>
+
     body {
         background-image: url('../../Images/Back.jpg');
     }
@@ -25,14 +26,10 @@
 
     foreach (var genServ in allGeneralServList)
     {
-        <p style="color: #862d2d;"> @genServ.Name</p>
+        <p style="color: #862d2d; font-size: 170%; align-content: center"> @genServ.Name</p>
         <br />
         <br />
         <table class="table table-bordered table-responsive table-hover">
-            <tr>
-                <th>Denumire </th>
-                <th>Pret</th>
-            </tr>
             @foreach (var serv in allServList)
             {
 
@@ -50,3 +47,18 @@
         <br />
     }
 }
+
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    @if (ViewData["adminLogin"] == "admin")
+    {
+        <a href="/generalservice/create" class="btn btn-warning">Adauga un serviciu general nou</a>
+        <a href="/services/create" class="btn btn-warning">Adauga un serviciu</a>
+        <br />
+        <a href="/generalservice/index" class="btn btn-warning">Detalii servicii generale-actualizare</a>
+        <a href="/services/index" class="btn btn-warning">Detalii servicii-actualizare</a>
+    }
+</div>

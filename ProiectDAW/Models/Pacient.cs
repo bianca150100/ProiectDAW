@@ -19,6 +19,7 @@ namespace ProiectDAW.Models
         public string LastName { get; set; }
 
         [Required]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
 
         //public virtual Appointment Appointment { get; set; }

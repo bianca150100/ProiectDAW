@@ -11,24 +11,46 @@
     }
 </style>
 
+<br />
+<br />
+<h1 class="jumbotron text-center" style="color: #862d2d; font-size: 240%">PERSONAL MEDICAL</h1>
 
-<h1 style="color: #862d2d;">PERSONAL MEDICAL</h1>
-
+<br />
 <br />
 
 @{
     var doctorsList = ViewData["medici"] as List<Medic>;
 
+
     foreach (var doctor in doctorsList)
     {
-        <div style="border-style: dotted;" class="col-md-6">
+        <div style="border-style: dotted; align-content: center;" class="col-md-6">
+            <br />
+            <br />
             <p style="font-size: 200%;"> - DR. @doctor.FirstName @doctor.LastName </p>
             <p> @doctor.Function </p>
             <hr>
             <p> @doctor.Description</p>
             <p style="color: #c65353;"> Phone: @doctor.PhoneNumber</p>
             <p style="color: blue;"> E-mail: @doctor.Email </p>
-        </div>
+            <br />
+            <br />
 
+        </div>
     }
+
+    <br>
+
+    <div>
+        <br />
+        <br />
+        <br />
+        <br />
+        @if (ViewData["adminLogin"] == "admin")
+        {
+            <a href="/medici/create" class="btn btn-warning">Adauga un medic nou</a>
+            <a href="/medici/index" class="btn btn-warning">Detalii medici actuali-actualizare</a>
+        }
+    </div>
 }
+

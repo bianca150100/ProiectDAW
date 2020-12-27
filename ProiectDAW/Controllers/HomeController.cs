@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProiectDAW.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,10 @@ namespace ProiectDAW.Controllers
 {
     public class HomeController : Controller
     {
+        private ClinicaContext context = new ClinicaContext();
         public ActionResult Index()
         {
+            ViewData["generalServices"] = context.GeneralService.ToList();
             return View();
         }
 
@@ -26,5 +29,7 @@ namespace ProiectDAW.Controllers
 
             return View();
         }
+
+
     }
 }

@@ -31,7 +31,7 @@ namespace ProiectDAW.Controllers
             var serv = context.Medici.Select(x => new
             {
                 MedicId = x.MedicId,
-                MedicName = x.FirstName
+                MedicName = x.FirstName + " " + x.LastName
             }).ToList();
 
             ViewBag.Medici = new SelectList(serv, "MedicId", "MedicName");
@@ -53,7 +53,7 @@ namespace ProiectDAW.Controllers
             var serv = context.Medici.Select(x => new
             {
                 MedicId = x.MedicId,
-                MedicName = x.FirstName
+                MedicName = x.FirstName + " " + x.LastName
 
             }).ToList();
 

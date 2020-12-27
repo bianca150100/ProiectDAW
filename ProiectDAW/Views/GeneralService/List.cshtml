@@ -10,8 +10,18 @@
 <h1 style="color: #862d2d;">LISTA PRETURI</h1>
 
 <style>
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
     body {
-        background-image: url('../../Images/Back.jpg');
+ 
+        background-image: url('../../Images/sursa2.png');
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 </style>
 
@@ -23,7 +33,7 @@
     <table class="table table-bordered table-responsive table-hover">
         <tr>
             <th>Denumire </th>
-            <th>Pret</th>
+            <th>Descriere</th>
         </tr>
 
         @foreach (var serv in sList)

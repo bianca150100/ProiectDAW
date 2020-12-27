@@ -1,9 +1,114 @@
-﻿@{
+﻿@using ProiectDAW.Models
+
+@{
     ViewBag.Title = "Beauty Clinique";
 }
 
-<a href="/appointments/create" class="btn btn-warning">Adauga programare</a>
 
-<a href="/appointments/myappointments" class="btn btn-warning">Programarile mele</a>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
 
-<a href="/appointments/calendar" class="btn btn-warning">Vizualizati calendarul programarilor actuale</a>
+    .bg {
+        background-image: url('../../Images/sursa3.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h1 {
+        color: #800040;
+        font-size: 60px;
+        font-family: URW Chancery L, cursive;
+        padding-bottom: 10px;
+    }
+</style>
+
+<body class="bg">
+    <div>
+        <br />
+        <br />
+
+        <br />
+        <br />
+        
+        <h1 style="font-size: 170%;">   • Experti in SANATATEA pielii</h1>
+
+        <h1 style="font-size: 170%;">   • Proceduri sigure & rezultate imediate</h1>
+
+        <h1 style="font-size: 170%;">  • Medici specializati</h1>
+
+        <h1 style="font-size: 170%;  ">
+            • Aparatura ultra-moderna<h1>
+
+    <br />
+
+    <img src="~/Images/sursa5.jpg">
+
+    <br />
+    <br />
+    <br />
+
+    <h5 style="background-color: floralwhite; font-size: 130%; text-align: center;"> „IN ZIUA DE AZI, OAMENII NU MAI VOR DOAR SA SUPRAVIETUIASCA CI VOR SA TRAIASCA FRUMOS!” </h5>
+    <h5 style="
+        text-align: center;
+"> Esti si tu unul dintre ei? Fa-ti o programare la BeautyClinique-Make you smile, pentru a-ti reincapata increderea si zambetul!</h5>
+
+    <br />
+
+    <div style="align-content:center; margin-left:30%">
+        <a href="/appointments/calendar" class="btn btn-warning">Cand pot sa ma programez?</a>
+        <a href="/appointments/create" class="btn btn-warning">Rezerva acum!</a>
+        <a href="/appointments/myappointments" class="btn btn-warning">Programarile mele</a>
+
+
+
+
+    </div>
+        <br />
+        <br />
+    </div>
+
+    <div>
+
+        <h2 class="jumbotron text-center">TRATAMENTE PRINCIPALE</h2>
+        <br />
+        @{
+            var sList = ViewData["generalServices"] as List<GeneralService>;
+                <ul>
+
+                    @foreach (var serv in sList)
+                    {
+                    <li >
+                        <p style="font-size: 130% ; color: darkgreen">  @serv.Name </p>
+                        <p style="text-align: justify"> @serv.Description</p>
+
+                    </li>
+                    <br />
+                    }
+                </ul>
+        }
+        <br />
+    </div>
+
+
+    <div>
+
+        <br />
+        <br />
+
+        <h2 class="jumbotron text-center">PROMISIUNEA NOASTRA</h2>
+        <h3 style=" text-align: center; background-color: antiquewhite"> "Ne-am propus să fim prima alegere a pacienților care se confruntă cu probleme dermatologice. De aceea, echipa noastră de medici este extrem de bine pregătită, iar aparatura este de ultimă generație."</h3>
+
+        <br />
+        <br />
+
+        <div style="align-content:center; margin-left:38%"> <img src="~/Images/sursa6.jpg" height="300px" width="400px"> </div>
+
+        <br />
+        <h3 style=" text-align: center;">Vino în clinica noastră și beneficiază de tratamente la cele mai înalte standarde!</h3>
+        <div style="align-content:center; margin-left:42%"> <a href="/appointments/create" class="btn btn-warning" style="align-content: center">Rezerva acum!</a> </div>
+    </div>
+</body>

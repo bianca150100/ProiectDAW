@@ -4,61 +4,96 @@
 <br />
 <br />
 <br />
-<address>
-    DERMABEAUTY CLINIQUE BUCURESTI<br />
-    Str. Fizicienilor 12, Bloc 1B<br />
-    Telefon: 0249.675.4433<br />
-</address>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .bg {
+            background-image: url('../../Images/sursa3.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            color: #800040;
+            font-size: 60px;
+            font-family: URW Chancery L, cursive;
+            padding-bottom: 10px;
+        }
+
+        address {
+            display: block;
+            font-style: italic;
+            font-size: 20px;
+        }
+    </style>
+    <body class="bg">
+
+        <address>
+            BEAUTY CLINIQUE BUCURESTI<br />
+            Str. Fizicienilor 12, Bloc 1B<br />
+            Telefon: 0249.675.4433<br />
+            Email: beauty_clinique@derma.com <br />
+        </address>
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <h4>Ai o intrebare? Nu ezita sa ne contactezi!</h4>
-    <hr />
-    <div class="form-group">
-        @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Name)
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Email)
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextAreaFor(m => m.Subject, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Subject)
-        </div>
-    </div>
+        @using (Html.BeginForm())
+        {
+            <br />
+            <br />
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Message)
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Send" />
-        </div>
-    </div>
+            @Html.AntiForgeryToken()
+            <h4 style="margin-left:10%; font-size: 30px">Ai o intrebare? Nu ezita sa ne contactezi!</h4>
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Name)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email)
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(m => m.Subject, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Subject)
+                </div>
+            </div>
 
-    <div>
-        <div>
-            @if (ViewBag.Message != null)
-            {
-                <div>@ViewBag.Message</div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Message)
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-default" value="Send" />
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    @if (ViewBag.Message != null)
+                    {
+                        <div>@ViewBag.Message</div>
 
 
-            }
-        </div>
-    </div>
-}
+                    }
+                </div>
+            </div>
+        }
+
+    </body>

@@ -1,4 +1,5 @@
-﻿using ProiectDAW.Data;
+﻿using Microsoft.AspNet.Identity;
+using ProiectDAW.Data;
 using ProiectDAW.Models;
 using System;
 using System.Collections.Generic;
@@ -133,6 +134,15 @@ namespace ProiectDAW.Controllers
             ViewData["generalServices2"] = serv;
             ViewData["allGeneralServ"] = context.GeneralService.ToList();
             ViewData["allServ"] = context.Services.ToList();
+            var user = User.Identity.GetUserName();
+            if (user.Equals("admin@admin.com"))
+            {
+                ViewData["adminLogin"] = "admin";
+            }
+            else
+            {
+                ViewData["adminLogin"] = "nu";
+            }
             return View();
         }
     }

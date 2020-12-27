@@ -146,6 +146,15 @@ namespace ProiectDAW.Controllers
         public ActionResult List()
         {
             ViewData["Medici"] = context.Medici.ToList();
+            var user = User.Identity.GetUserName();
+            if (user.Equals("admin@admin.com"))
+            {
+                ViewData["adminLogin"] = "admin";
+            }
+            else
+            {
+                ViewData["adminLogin"] = "nu";
+            }
             return View();
         }
 
