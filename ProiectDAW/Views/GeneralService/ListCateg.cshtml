@@ -3,62 +3,126 @@
 @{
     ViewBag.Title = "List";
 }
-<br />
-<br />
-<br />
 
-<h1 class="jumbotron text-center" style="color: #862d2d; font-size: 240%">LISTA PRETURI</h1>
-
+<script>
+    $(document).ready(function () {
+        AOS.init({ disable: 'mobile' });
+    });
+</script>
 <style>
 
+    /* Header settings */
     body {
+        font-family: 'sans-serif';
+        background-image: url('../../Images/Back.jpg');
+        height: 100%; /* you can change that height to 100%, please get sure youre Header is ready */
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: left;
         background-image: url('../../Images/Back.jpg');
     }
+
+
+
+    header .row {
+        margin-top: 40vh; /* Handle the row */
+    }
+
+
+    header h1 {
+        font-family: 'Arbutus', cursive;
+        text-align: center;
+        font-size: 61px;
+        color: #F8CA4D;
+        text-shadow: 0px 0px 4px #222;
+    }
+
+
+    header p {
+        text-align: center;
+        font-size: 21px;
+    }
+
+    header .btn-link {
+        border: 1px solid #2F3440;
+        margin-top: 20px;
+        font-size: 21px;
+        letter-spacing: 1px;
+        color: #2F3440;
+        text-shadow: 0px 0px 1px #222;
+        box-shadow: 0px 0px 1px #000;
+    }
+
+        header .btn-link:hover {
+            text-decoration: none;
+            color: #eee;
+            border: 1px solid #eee;
+            transition: all 0.7s;
+            text-shadow: 0px 0px 3px #000;
+        }
 </style>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css"> <!-- thats important for animation effects -->
+    <link href="https://fonts.googleapis.com/css?family=Arbutus" rel="stylesheet"> <!-- Demo -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<br />
+<br />
+<br />
+<body>
+    <header>
 
-<br />
-<br />
-<br />
-@{
-    var sList = ViewData["generalServices2"] as List<Service>;
-    var allGeneralServList = ViewData["allGeneralServ"] as List<GeneralService>;
-    var allServList = ViewData["allServ"] as List<Service>;
+        <h1 class="jumbotron text-center" style=" font-size: 240%">LISTA PRETURI</h1>
 
-    foreach (var genServ in allGeneralServList)
-    {
-        <p style="color: #862d2d; font-size: 170%; align-content: center"> @genServ.Name</p>
+
+
         <br />
         <br />
-        <table class="table table-bordered table-responsive table-hover">
-            @foreach (var serv in allServList)
+        <br />
+        @{
+            var sList = ViewData["generalServices2"] as List<Service>;
+            var allGeneralServList = ViewData["allGeneralServ"] as List<GeneralService>;
+            var allServList = ViewData["allServ"] as List<Service>;
+
+            foreach (var genServ in allGeneralServList)
             {
+                <p style="color: #862d2d; font-size: 170%; align-content: center"> @genServ.Name</p>
+                <br />
+                <br />
+                <table class="table table-bordered table-responsive table-hover">
+                    @foreach (var serv in allServList)
+                    {
 
-                if (serv.GeneralServiceId == genServ.GeneralServiceId)
-                {
-                    <tr>
-                        <td>@serv.Name</td>
-                        <td>@serv.Pret</td>
-                    </tr>
-                }
+                        if (serv.GeneralServiceId == genServ.GeneralServiceId)
+                        {
+                            <tr>
+                                <td>@serv.Name</td>
+                                <td>@serv.Pret</td>
+                            </tr>
+                        }
 
+                    }
+                </table>
+                <br />
+                <br />
             }
-        </table>
-        <br />
-        <br />
-    }
-}
+        }
 
-<div>
-    <br />
-    <br />
-    <br />
-    <br />
-    @if (ViewData["adminLogin"] == "admin")
-    {
-        <a href="/generalservice/create" class="btn btn-warning">Adauga un serviciu general nou</a>
-        <a href="/services/create" class="btn btn-warning">Adauga un serviciu</a>
-        <br />
-        <a href="/generalservice/index" class="btn btn-warning">Detalii servicii generale-actualizare</a>
-        <a href="/services/index" class="btn btn-warning">Detalii servicii-actualizare</a>
-    }
-</div>
+        <div>
+            <br />
+            <br />
+            <br />
+            <br />
+            @if (ViewData["adminLogin"] == "admin")
+            {
+                <a href="/generalservice/create" class="btn btn-warning">Adauga un serviciu general nou</a>
+                <a href="/services/create" class="btn btn-warning">Adauga un serviciu</a>
+                <br />
+                <a href="/generalservice/index" class="btn btn-warning">Detalii servicii generale-actualizare</a>
+                <a href="/services/index" class="btn btn-warning">Detalii servicii-actualizare</a>
+            }
+        </div>
+    </header>
+</body>

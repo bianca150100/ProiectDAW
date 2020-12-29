@@ -245,6 +245,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\Back.jpg" />
     <Content Include="Images\back2.jpg" />
+    <Content Include="Images\panoramic.jpg" />
     <Content Include="Images\sursa1.jpg" />
     <Content Include="Images\sursa2.png" />
     <Content Include="Images\sursa3.png" />
