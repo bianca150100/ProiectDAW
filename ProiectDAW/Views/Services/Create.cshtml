@@ -3,45 +3,64 @@
 @{
     ViewBag.Title = "Create";
 }
+<style>
+    .bg {
+        background-image: url('../../Images/back5.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
-<h2>Adaugare serviciu - pret</h2>
+    h4 {
+        color: #800040;
+        font-size: 60px;
+        font-family: URW Chancery L, cursive;
+        padding-bottom: 10px;
+    }
+</style>
 
 <br />
+<br />
 
-@using (Html.BeginForm())
-{
-<div class="form-horizontal">
+<h4 style="font-size: 130%">Adaugare serviciu nou</h4>
 
-    <div class="form-group">
-        @Html.LabelFor(x => x.Name, new { @class = "control-label col-md-3" })
-        <div class="col-md-9">
-            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
-            @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+<br />
+<body class="bg">
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Name, new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Pret, new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(x => x.Pret, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Pret, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.GeneralService, new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @*@Html.DropDownList("GeneralServiceId", new SelectList(ViewBag.GeneralService, "GeneralServiceId", "Name"))*@
+                    @Html.DropDownList("GeneralServiceId", (SelectList)ViewBag.GeneralService)
+                    @Html.ValidationMessageFor(x => x.GeneralServiceId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                    <input type="submit" value="Adauga!" class="btn btn-primary" />
+                </div>
+            </div>
+
         </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(x => x.Pret, new { @class = "control-label col-md-3" })
-        <div class="col-md-9">
-            @Html.TextBoxFor(x => x.Pret, new { @class = "form-control" })
-            @Html.ValidationMessageFor(x => x.Pret, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(x => x.GeneralService, new { @class = "control-label col-md-3" })
-        <div class="col-md-9">
-            @*@Html.DropDownList("GeneralServiceId", new SelectList(ViewBag.GeneralService, "GeneralServiceId", "Name"))*@
-            @Html.DropDownList("GeneralServiceId", (SelectList)ViewBag.GeneralService)
-            @Html.ValidationMessageFor(x => x.GeneralServiceId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-10 col-md-offset-2">
-            <input type="submit" value="Adauga!" class="btn btn-primary" />
-        </div>
-    </div>
-
-</div>
-}
+    }
+    </body>

@@ -5,8 +5,28 @@
     ViewBag.Title = "Index";
 }
 
-<h1 style="color: #862d2d;">LISTA PRETURI</h1>
+<style>
+    .bg {
+        background-image: url('../../Images/back5.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
+    h4 {
+        color: #800040;
+        font-size: 60px;
+        font-family: URW Chancery L, cursive;
+        padding-bottom: 10px;
+    }
+</style>
+
+<br />
+<br />
+
+<h4 style="font-size: 130%">Detalii servicii:</h4>
+
+<br />
 <a href="/GeneralService/create" class="btn btn-success">Adauga serviciu clinica</a>
 
 <br />
@@ -14,32 +34,35 @@
 <br />
 
 <br />
+<body class="bg">
+    @{
+        var sList = ViewData["generalServices"] as List<GeneralService>;
+        <table class="table table-bordered table-responsive table-hover">
+            <tr>
+                <th>Nume</th>
+                <th>Descriere</th>
+                <th>Perioada de recuperare</th>
+                <th>Actiune_1</th>
+                <th>Actiune_2</th>
+            </tr>
+            @foreach (var serv in sList)
+            {
+                <tr>
 
-@{
-    var sList = ViewData["generalServices"] as List<GeneralService>;
 
-    foreach (var serv in sList)
-    {
-    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+                    <td>@serv.Name</td>
 
-        @Html.Label("Name", "Name:")
-        <p>@serv.Name</p>
+                    <td>@serv.Description</td>
 
-        <br />
+                    <td>@serv.RecoveryPeriod</td>
 
-        @Html.Label("Description", "Description:")
-        <p>@serv.Description</p>
+                    <td> <a href="/GeneralService/update/@serv.GeneralServiceId" class="btn btn-warning">Editare</a></td>
 
-        @Html.Label("RecoveryPeriod", "RecoveryPeriod:")
-        <p>@serv.RecoveryPeriod</p>
+                    <td> <a href="/GeneralService/delete/@serv.GeneralServiceId" class="btn btn-danger">Sterge</a></td>
 
-        <a href="/GeneralService/update/@serv.GeneralServiceId" class="btn btn-warning">Editare</a>
+                </tr>
 
-        <br />
-
-        <a href="/GeneralService/delete/@serv.GeneralServiceId" class="btn btn-danger">Sterge</a>
-
-    </div>
-
+            }
+        </table>
     }
-}
+</body>

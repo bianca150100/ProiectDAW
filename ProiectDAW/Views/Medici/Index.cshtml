@@ -4,49 +4,67 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Lista doctori: </h2>
-
-<a href="/medici/create" class="btn btn-success">Adauga doctor clinica</a>
-
-<br />
-
-<br />
-
-<br />
-
-@{
-    var doctorsList = ViewData["medici"] as List<Medic>;
-
-    foreach (var doctor in doctorsList)
-    {
-    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
-
-        @Html.Label("First Name", "First Name:")
-        <p>@doctor.FirstName</p>
-
-        <br />
-
-        @Html.Label("Last Name", "Last Name:")
-        <p>@doctor.LastName</p>
-
-        @using (Html.BeginForm(actionName: "Details",
-            controllerName: "Medici",
-            method: FormMethod.Get,
-            routeValues: new { id = doctor.MedicId }))
-        {
-            <button class="btn btn-info">Detalii</button>
-
-        }
-
-
-        <a href="/medici/update/@doctor.MedicId" class="btn btn-warning">Editare</a>
-
-        <br />
-
-        <a href="/medici/delete/@doctor.MedicId" class="btn btn-danger">Sterge</a>
-
-    </div>
-
+<style>
+    .bg {
+        background-image: url('../../Images/back5.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-}
+
+    h4 {
+        color: #800040;
+        font-size: 60px;
+        font-family: URW Chancery L, cursive;
+        padding-bottom: 10px;
+    }
+</style>
+
+<br />
+
+<h4 style="font-size: 130%">Lista medicilor actuali ai clinicii: </h4> 
+
+<br />
+
+<br />
+<body class="bg">
+    @{
+        var doctorsList = ViewData["medici"] as List<Medic>;
+        <table class="table table-bordered table-responsive table-hover">
+            <tr>
+                <th>Prenume</th>
+                <th>Nume</th>
+                <th>Actiune_1</th>
+                <th>Actiune_2</th>
+                <th>Actiune_3</th>
+            </tr>
+
+            @foreach (var doctor in doctorsList)
+            {
+
+                <tr>
+                    <td>@doctor.FirstName</td>
+                    <td>@doctor.LastName</td>
+
+                    @using (Html.BeginForm(actionName: "Details",
+                        controllerName: "Medici",
+                        method: FormMethod.Get,
+                        routeValues: new { id = doctor.MedicId }))
+                    {
+                        <td>
+                            <button class="btn btn-info">Detalii</button>
+                        </td>
+
+                    }
+
+
+                    <td> <a href="/medici/update/@doctor.MedicId" class="btn btn-warning">Editare</a>  </td>
+                    <td><a href="/medici/delete/@doctor.MedicId" class="btn btn-danger">Sterge</a></td>
+                </tr>
+
+
+            }
+        </table>
+    }
+    <a href="/medici/create" class="btn btn-success">Adauga un nou medic</a>
+    </body>

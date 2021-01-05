@@ -3,61 +3,86 @@
 @{
     ViewBag.Title = "Log in";
 }
+<style>
+    .note {
+        text-align: center;
+        height: 80px;
+        background: -webkit-linear-gradient(left, #e6e6e6, #999999);
+        color: black;
+        font-weight: bold;
+        line-height: 80px;
+    }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    .form-content {
+        padding: 5%;
+        border: 1px solid #ced4da;
+        margin-bottom: 2%;
+    }
+
+    .form-control {
+        border-radius: 1.5rem;
+    }
+
+    .btnSubmit {
+        border: none;
+        border-radius: 1.5rem;
+        padding: 1%;
+        width: 20%;
+        cursor: pointer;
+        background: #bfbfbf;
+        color: #fff;
+    }
+
+    .bg {
+        background-image: url('../../Images/back5.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+
+
+<br />
+<br />
+<br />
+<br />
+<body class="bg">
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="note">
+            <p>Aveti deja un cont? Logati-va!</p>
+        </div>
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-content">
+            <div class="row">
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                     </div>
                 </div>
+
+                <br />
+
                 <div class="form-group">
                     @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
-                    </div>
-                </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
-                @* Enable this once you have account confirmation enabled for password reset functionality
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
-            }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
-</div>
+                <br />
 
+                <br />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btnSubmit" value="Login" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</body>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -4,8 +4,27 @@
 @{
     ViewBag.Title = "Index";
 }
+<style>
+    .bg {
+        background-image: url('../../Images/back5.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
-<h1 style="color: #862d2d;">LISTA PRETURI</h1>
+    h4 {
+        color: #800040;
+        font-size: 60px;
+        font-family: URW Chancery L, cursive;
+        padding-bottom: 10px;
+    }
+</style>
+
+<br />
+
+<br />
+
+<h4 style="font-size: 130%">Detalii servicii:</h4>
 
 <a href="/services/create" class="btn btn-success">Adauga serviciu clinica</a>
 
@@ -15,32 +34,27 @@
 
 <br />
 
-@{
-    var sList = ViewData["services"] as List<Service>;
+<body class="bg">
+    @{
+        var sList = ViewData["services"] as List<Service>;
+        <table class="table table-bordered table-responsive table-hover">
+            <tr>
+                <th>Nume</th>
+                <th>Pret</th>
+                <th>Actiune_1</th>
+                <th>Actiune_2</th>
+            </tr>
+            @foreach (var serv in sList)
+            {
 
-    foreach (var serv in sList)
-    {
-    <div class="col-md-4 col-lg-4 col-xs-6 col-sm-4">
+                <tr>
+                    <td>@serv.Name</td>
+                    <td>@serv.Pret</td>
+                    <td> <a href="/services/update/@serv.Id" class="btn btn-warning">Editare</a> </td>
+                    <td> <a href="/services/delete/@serv.Id" class="btn btn-danger">Sterge</a> </td>
+                </tr>
 
-        @Html.Label("Name", "Name:")
-        <p>@serv.Name</p>
-
-        <br />
-
-        @Html.Label("Pret", "Pret:")
-        <p>@serv.Pret</p>
-
-        @Html.Label("Name", "Serviciu:")
-        <p>@serv.GeneralServiceId</p>
-
-
-        <a href="/services/update/@serv.Id" class="btn btn-warning">Editare</a>
-
-        <br />
-
-        <a href="/services/delete/@serv.Id" class="btn btn-danger">Sterge</a>
-
-    </div>
-
+            }
+        </table>
     }
-}
+</body>

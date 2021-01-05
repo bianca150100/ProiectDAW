@@ -1,5 +1,9 @@
 ﻿@model ProiectDAW.Models.ContactViewModel
-
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
 <br />
 <br />
 <br />
@@ -11,7 +15,8 @@
         }
 
         .bg {
-            background-image: url('../../Images/sursa3.png');
+
+            background-image: url('../../Images/back7.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -29,6 +34,37 @@
             font-style: italic;
             font-size: 20px;
         }
+
+        img {
+            filter: gray; /* IE6-9 */
+            -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+            -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+            box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+            margin-bottom: 20px;
+            width :"500";
+            height:"600";
+        }
+
+            img:hover {
+                filter: none; /* IE6-9 */
+                -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+            }
+        .map-container {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+            .map-container iframe {
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+
     </style>
     <body class="bg">
 
@@ -38,62 +74,10 @@
             Telefon: 0249.675.4433<br />
             Email: beauty_clinique@derma.com <br />
         </address>
+         <br />
 
-
-        @using (Html.BeginForm())
-        {
-            <br />
-            <br />
-
-            @Html.AntiForgeryToken()
-            <h4 style="margin-left:10%; font-size: 30px">Ai o intrebare? Nu ezita sa ne contactezi!</h4>
-            <hr />
-            <div class="form-group">
-                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Name)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Email)
-                </div>
-            </div>
-            <div class="form-group">
-                @Html.LabelFor(m => m.Subject, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextAreaFor(m => m.Subject, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Subject)
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
-                    @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m => m.Message)
-                </div>
-            </div>
-            <br />
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" class="btn btn-default" value="Send" />
-                </div>
-            </div>
-
-            <div>
-                <div>
-                    @if (ViewBag.Message != null)
-                    {
-                        <div>@ViewBag.Message</div>
-
-
-                    }
-                </div>
-            </div>
-        }
-
+        <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">
+            <iframe src="https://maps.google.com/maps?q=(44.41413489696252,26.151238240284115)&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    style="border:0" allowfullscreen></iframe>
+        </div>
     </body>

@@ -87,6 +87,21 @@ header .btn-link:hover
         <br />
 
         @{
+                <div>
+                    @if (ViewData["adminLogin"] == "admin")
+                    {
+                        <table class ="table table-bordered table-responsive table-hover">
+                            <tr>
+                                <td><a href="/medici/create" class="btn btn-warning">Adauga un medic nou</a> </td>
+                          
+                                <td><a href="/medici/index" class="btn btn-warning">Detalii medici actuali-actualizare</a> </td>
+                            </tr>
+                            </table>
+                        }
+                </div>
+                <br />
+                <br />
+
             var doctorsList = ViewData["medici"] as List<Medic>;
 
 
@@ -114,11 +129,7 @@ header .btn-link:hover
                 <br />
                 <br />
                 <br />
-                @if (ViewData["adminLogin"] == "admin")
-                {
-                    <a href="/medici/create" class="btn btn-warning">Adauga un medic nou</a>
-                    <a href="/medici/index" class="btn btn-warning">Detalii medici actuali-actualizare</a>
-                }
+
             </div>
         }
 

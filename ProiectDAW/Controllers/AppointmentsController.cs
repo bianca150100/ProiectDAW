@@ -26,6 +26,21 @@ namespace ProiectDAW.Controllers
 
         [Authorize(Roles = "User")]
         [HttpGet]
+        public ActionResult Eroare()
+        {
+            var serv = context.Medici.Select(x => new
+            {
+                MedicId = x.MedicId,
+                MedicName = x.FirstName + " " + x.LastName
+            }).ToList();
+
+            ViewBag.Medici = new SelectList(serv, "MedicId", "MedicName");
+
+            return View();
+        }
+
+        [Authorize(Roles = "User")]
+        [HttpGet]
         public ActionResult Create()
         {
             var serv = context.Medici.Select(x => new
@@ -44,11 +59,27 @@ namespace ProiectDAW.Controllers
         {
             if (ModelState.IsValid)
             {
+                var programariExistente = context.Appointments.ToList();
+
+                foreach (var prog in programariExistente)
+                {
+                    if (prog.MedicId == ser.MedicId && prog.Data.Equals(ser.Data) && prog.Ora.Equals(ser.Ora) )
+                    {
+                        var textEroare = "Ne pare rau! Este indisponibil in data de ";
+                        textEroare += ser.Data;
+                        textEroare += " ,ora: ";
+                        textEroare += ser.Ora;
+                        ViewBag.error = textEroare;
+
+                        return RedirectToAction("Eroare", "Appointments");
+                    }
+                }
+
                 context.Appointments.Add(ser);
 
                 context.SaveChanges();
 
-                return RedirectToAction("Index", "Appointments");
+                return RedirectToAction("Myappointments", "Appointments");
             }
             var serv = context.Medici.Select(x => new
             {
@@ -91,7 +122,7 @@ namespace ProiectDAW.Controllers
 
             context.SaveChanges();
 
-            return RedirectToAction("Index", "Appointments");
+            return RedirectToAction("Myappointments", "Appointments");
         }
 
         public ActionResult List()

@@ -174,7 +174,6 @@
     <Compile Include="Controllers\GeneralServiceController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PacientsController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Data\ClinicaContext.cs" />
@@ -245,6 +244,17 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\Back.jpg" />
     <Content Include="Images\back2.jpg" />
+    <Content Include="Images\back5.jpg" />
+    <Content Include="Images\back6.jpg" />
+    <Content Include="Images\back7.jpg" />
+    <Content Include="Images\derma1.jpg" />
+    <Content Include="Images\derma2.jpg" />
+    <Content Include="Images\derma3.jpg" />
+    <Content Include="Images\derma3.png" />
+    <Content Include="Images\derma5.png" />
+    <Content Include="Images\derma6.jpg" />
+    <Content Include="Images\derma8.jpg" />
+    <Content Include="Images\derma9.jpg" />
     <Content Include="Images\panoramic.jpg" />
     <Content Include="Images\sursa1.jpg" />
     <Content Include="Images\sursa2.png" />
@@ -256,6 +266,7 @@
     <Content Include="Images\sursa8.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Images\derma7.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -320,15 +331,11 @@
     <Content Include="Views\GeneralService\List.cshtml" />
     <Content Include="Views\GeneralService\Update.cshtml" />
     <Content Include="Views\GeneralService\ListCateg.cshtml" />
-    <Content Include="Views\Pacients\Create.cshtml" />
-    <Content Include="Views\Pacients\Details.cshtml" />
-    <Content Include="Views\Pacients\Index.cshtml" />
-    <Content Include="Views\Pacients\List.cshtml" />
-    <Content Include="Views\Pacients\Update.cshtml" />
     <Content Include="Views\Appointments\Create.cshtml" />
     <Content Include="Views\Appointments\Index.cshtml" />
     <Content Include="Views\Appointments\Myappointments.cshtml" />
     <Content Include="Views\Appointments\Calendar.cshtml" />
+    <Content Include="Views\Appointments\Eroare.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

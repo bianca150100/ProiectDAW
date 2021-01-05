@@ -82,6 +82,25 @@
         <br />
         <br />
         @{
+            <div>
+                @if (ViewData["adminLogin"] == "admin")
+                {
+                    <table class="table table-bordered table-responsive table-hover">
+                        <tr>
+                            <td><a href="/generalservice/create" class="btn btn-warning">Adauga un serviciu general nou</a> </td>
+
+                            <td> <a href="/services/create" class="btn btn-warning">Adauga un serviciu</a> </td>
+                            <td><a href="/generalservice/index" class="btn btn-warning">Detalii servicii generale-actualizare</a> </td>
+
+                            <td> <a href="/services/index" class="btn btn-warning">Detalii servicii-actualizare</a> </td>
+
+                        </tr>
+                    </table>
+                }
+            </div>
+            <br />
+            <br />
+
             var sList = ViewData["generalServices2"] as List<Service>;
             var allGeneralServList = ViewData["allGeneralServ"] as List<GeneralService>;
             var allServList = ViewData["allServ"] as List<Service>;
@@ -110,19 +129,11 @@
             }
         }
 
-        <div>
-            <br />
-            <br />
-            <br />
-            <br />
-            @if (ViewData["adminLogin"] == "admin")
-            {
-                <a href="/generalservice/create" class="btn btn-warning">Adauga un serviciu general nou</a>
-                <a href="/services/create" class="btn btn-warning">Adauga un serviciu</a>
-                <br />
-                <a href="/generalservice/index" class="btn btn-warning">Detalii servicii generale-actualizare</a>
-                <a href="/services/index" class="btn btn-warning">Detalii servicii-actualizare</a>
-            }
+    <div>
+        <br />
+        <br />
         </div>
+
+    </div>
     </header>
 </body>

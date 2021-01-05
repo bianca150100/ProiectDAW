@@ -1,0 +1,101 @@
+﻿@model ProiectDAW.Models.Appointment
+
+@{
+    ViewBag.Title = "Eroare";
+}
+
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg {
+        background-image: url('../../Images/sursa8.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h1 {
+        color: #800040;
+        font-size: 60px;
+        font-family: URW Chancery L, cursive;
+        padding-bottom: 10px;
+    }
+</style>
+
+<body class="bg">
+    <br />
+    <br />
+
+    <h4 style="color: darkslategrey">Completeaza formularul pentru a deveni pacient al clinicii noastre! Inainte, te rugam sa verifici disponibilitatea medicului <a href="/appointments/calendar">aici</a> . Multumim!</h4>
+
+    <br />
+
+    <br />
+
+    <p> Ne pare rau! Nu este disponibil. Verificati cu atentie disponbilitatea medicului la care doriti programarea! Multumim! </p>
+    @using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.FirstName, new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.LastName, new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Email, new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Medic, new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @*@Html.DropDownList("MedicId", new SelectList(ViewBag.Medici, "MedicId", "MedicName"))*@
+                    @Html.DropDownList("MedicId", (SelectList)ViewBag.Medici)
+                    @Html.ValidationMessageFor(x => x.MedicId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Data, new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(x => x.Data, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Data, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Ora, new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(x => x.Ora, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Ora, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="align-items: 30%">
+                <div class="col-md-10 col-md-offset-2">
+                    <input type="submit" value="Rezerva!" class="btn btn-primary" />
+                </div>
+            </div>
+
+        </div>
+    }
+</body>
