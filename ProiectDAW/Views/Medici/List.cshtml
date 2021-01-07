@@ -81,26 +81,26 @@ header .btn-link:hover
     <header>
         <br />
         <br />
-        <h1 class="jumbotron text-center" style="color: #862d2d; font-size: 240%">PERSONAL MEDICAL</h1>
+        <h1 class="jumbotron text-center" style=" font-size: 240%">Personal MEDICAL</h1>
 
         <br />
         <br />
 
         @{
-                <div>
-                    @if (ViewData["adminLogin"] == "admin")
-                    {
-                        <table class ="table table-bordered table-responsive table-hover">
-                            <tr>
-                                <td><a href="/medici/create" class="btn btn-warning">Adauga un medic nou</a> </td>
-                          
-                                <td><a href="/medici/index" class="btn btn-warning">Detalii medici actuali-actualizare</a> </td>
-                            </tr>
-                            </table>
-                        }
-                </div>
-                <br />
-                <br />
+            <div>
+                @if (ViewData["adminLogin"] == "admin")
+                {
+                    <table class="table table-bordered table-responsive table-hover">
+                        <tr>
+                            <td><a href="/medici/create" class="btn btn-warning">Adauga un medic nou</a> </td>
+
+                            <td><a href="/medici/index" class="btn btn-warning">Detalii medici actuali-actualizare</a> </td>
+                        </tr>
+                    </table>
+                }
+            </div>
+            <br />
+            <br />
 
             var doctorsList = ViewData["medici"] as List<Medic>;
 

@@ -114,3 +114,4 @@ C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migration
 C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.RemoveCol.resources
 C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.UpdataAP.resources
 C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.UpdataAP2.resources
+C:\Users\buzoi\source\repos\ProiectDAW\ProiectDAW\obj\Debug\ProiectDAW.Migrations.deletetable.resources

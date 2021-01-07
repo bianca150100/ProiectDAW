@@ -25,7 +25,6 @@ namespace ProiectDAW.Data
 
         public DbSet<GeneralService> GeneralService { get; set; }
 
-        public DbSet<Pacient> Pacients { get; set; }
 
         public DbSet<Appointment> Appointments { get; set; }
     }

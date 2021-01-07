@@ -1,19 +1,82 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<br />
+<br />
+<br />
+<br />
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
 
-<h1 style="color: #862d2d;">CONTACT</h1>
+    .bg {
+        background-image: url('../../Images/back7.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
-<address>
-    DERMABEAUTY CLINIQUE BUCURESTI<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    h1 {
+        color: #800040;
+        font-size: 60px;
+        font-family: URW Chancery L, cursive;
+        padding-bottom: 10px;
+    }
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    address {
+        display: block;
+        font-style: italic;
+        font-size: 20px;
+    }
+
+    img {
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+        -webkit-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+        box-shadow: 0px 2px 6px 2px rgba(0,0,0,0.75);
+        margin-bottom: 20px;
+        width: "500";
+        height: "600";
+    }
+
+        img:hover {
+            filter: none; /* IE6-9 */
+            -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+        }
+
+    .map-container {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+    }
+
+        .map-container iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+</style>
+<body class="bg">
+
+    <address>
+        BEAUTY CLINIQUE BUCURESTI<br />
+        Str. Fizicienilor 12, Bloc 1B<br />
+        Telefon: 0249.675.4433<br />
+        Email: beauty_clinique@derma.com <br />
+    </address>
+    <br />
+
+    <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">
+        <iframe src="https://maps.google.com/maps?q=(44.41413489696252,26.151238240284115)&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                style="border:0" allowfullscreen></iframe>
+    </div>
+</body>

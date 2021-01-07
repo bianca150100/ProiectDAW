@@ -12,9 +12,10 @@
     }
 
     .bg {
-        background-image: url('../../Images/sursa3.png');
+
+        background-image: url('../../Images/back5.jpg');
         background-position: center;
-        background-repeat: no-repeat;
+        background-repeat: repeat;
         background-size: cover;
     }
 
@@ -34,56 +35,266 @@
         margin-bottom: 20px;
         width: "500";
         height: "600";
+        align-content: center;
+        margin-left: 30%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
     }
 
         .img1:hover {
             filter: none; /* IE6-9 */
             -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
         }
-
 </style>
 
-<body class="bg">
+<style>
+
+    .flex-grid {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: stretch;
+    }
+
+        .flex-grid .grid-item-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .flex-grid .grid-item {
+            width: 100%;
+            padding: 1rem;
+            position: relative;
+        }
+
+            .flex-grid .grid-item h4 {
+                margin-bottom: .5rem;
+                margin-top: 0;
+                font-weight: 400;
+            }
+
+        .flex-grid .grid-item-bg-img {
+            position: relative;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: sepia(0.3) saturate(0.8);
+            -webkit-filter: sepia(0.3) saturate(0.8);
+        }
+
+        .flex-grid.featured-content .grid-item-wrapper {
+            overflow: hidden;
+        }
+
+            .flex-grid.featured-content .grid-item-wrapper .grid-item-bg-img {
+                -webkit-transform: scale(1);
+                -moz-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+                -webkit-transition: -webkit-transform 0.35s;
+                transition: transform 0.35s;
+            }
+
+            .flex-grid.featured-content .grid-item-wrapper:hover .grid-item-bg-img {
+                -webkit-transform: scale(1.1);
+                -moz-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                transform: scale(1.1);
+                -webkit-transition: -webkit-transform 4s cubic-bezier(0.39, 0.575, 0.565, 1);
+                transition: transform 4s cubic-bezier(0.39, 0.575, 0.565, 1);
+            }
+
+            .flex-grid.featured-content .grid-item-wrapper .grid-item-content {
+                -webkit-transition: opacity 0.35s;
+                -moz-transition: opacity 0.35s;
+                -ms-transition: opacity 0.35s;
+                -o-transition: opacity 0.35s;
+                transition: opacity 0.35s;
+                opacity: 0;
+            }
+
+            .flex-grid.featured-content .grid-item-wrapper:hover .grid-item-content {
+                opacity: 1;
+                -webkit-transition: opacity 0.6125s cubic-bezier(0.39, 0.575, 0.565, 1);
+                -moz-transition: opacity 0.6125s cubic-bezier(0.39, 0.575, 0.565, 1);
+                -ms-transition: opacity 0.6125s cubic-bezier(0.39, 0.575, 0.565, 1);
+                -o-transition: opacity 0.6125s cubic-bezier(0.39, 0.575, 0.565, 1);
+                transition: opacity 0.6125s cubic-bezier(0.39, 0.575, 0.565, 1);
+            }
+
+        .flex-grid.featured-content .grid-item {
+            height: 50vh;
+            padding: 0;
+            position: relative;
+        }
+
+        .flex-grid.featured-content .grid-item-content {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: .5rem .75rem;
+            font-size: 1rem;
+            font-weight: 300;
+            /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); */
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+        }
+
+        .flex-grid.featured-content .grid-title {
+            font-size: 1.5rem;
+        }
+
+        .flex-grid.featured-content .grid-item-content-details {
+            height: 300px;
+            overflow: hidden;
+            margin: 5%;
+        }
+
+        .flex-grid.featured-content .grid-action {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: .75rem;
+            text-align: right;
+        }
+
+
+
+    .btn--clear {
+        background: transparent;
+        color: #fff;
+    }
+
+        .btn--clear:before {
+            content: ' ';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid #fff;
+            top: 0;
+            left: 0;
+        }
+
+        .btn--clear:hover {
+            background: #FF5722;
+        }
+</style>
+
+<body >
+    <br />
+    <br />
+    <div class="flex-grid featured-content">
+
+        <div class="grid-item">
+            <div class="grid-item-wrapper">
+                <div class="grid-item-bg-img" style="background-image: url('../../Images/sursa1.jpg'); "></div>
+                <div class="grid-item-content">
+                    <div class="grid-item-content-details">
+                        <h4 class="grid-title">Experti in SANATATEA pielii</h4>
+                        <div class="grid-details"> Pielea reprezinta grija principala a oricarui individ. Orice problema semnalata la nivelul acesteia isi gaseste la noi rezolvare.</div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <br />
+        <div class="grid-item">
+            <div class="grid-item-wrapper">
+                <div class="grid-item-bg-img" style="background-image: url('../../Images/derma9.jpg');
+"></div>
+                <div class="grid-item-content">
+                    <div class="grid-item-content-details">
+                        <h4 class="grid-title">Proceduri sigure & rezultate imediate</h4>
+                        <div class="grid-details">Rapid, simplu, fara dureri si cu rezultate exceptionale! </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="grid-item">
+            <div class="grid-item-wrapper">
+                <div class="grid-item-bg-img" style="background-image: url('../../Images/medici.jpg');"></div>
+                <div class="grid-item-content">
+                    <div class="grid-item-content-details">
+                        <h4 class="grid-title">Medici specializati</h4>
+                        <div class="grid-details">Am cautat medici specialisti, dornici sa vina in ajutorul dumneavoastra. Apelati cu incredere la ei pentru orice problema intampinati.</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <br />
+    <div class="grid-item">
+        <div class="grid-item-wrapper">
+            <div class="grid-item-bg-img" style="background-image: url('../../Images/derma6.jpg'); "></div>
+            <div class="grid-item-content">
+                <div class="grid-item-content-details">
+                    <h4 class="grid-title">Aparatura ultra-moderna</h4>
+                    <div class="grid-details">Clinica dispune de aparatura de ultima generatie pentru efectuarea tratementelor. </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <br />
+    <div class="grid-item">
+        <div class="grid-item-wrapper">
+            <div class="grid-item-bg-img" style="background-image: url('../../Images/sursa2.png');"></div>
+            <div class="grid-item-content">
+                <div class="grid-item-content-details">
+                    <h4 class="grid-title">Proceduri populare</h4>
+                    <div class="grid-details">Ne mandrim cu faptul ca avem o lista completa de proceduri premium estetice dar si dermatologice.</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
     <div>
         <br />
         <br />
 
-        <br />
-        <br />
-        
-        <h1 style="font-size: 170%;">   • Experti in SANATATEA pielii</h1>
 
-        <h1 style="font-size: 170%;">   • Proceduri sigure & rezultate imediate</h1>
 
-        <h1 style="font-size: 170%;">  • Medici specializati</h1>
-
-        <h1 style="font-size: 170%;  ">
-            • Aparatura ultra-moderna<h1>
-
-    <br />
-
-    <img class="img1" src="~/Images/sursa5.jpg">
-
-    <br />
-    <br />
-    <br />
-
-    <h5 style="background-color: floralwhite; font-size: 130%; text-align: center;"> „IN ZIUA DE AZI, OAMENII NU MAI VOR DOAR SA SUPRAVIETUIASCA CI VOR SA TRAIASCA FRUMOS!” </h5>
-    <h5 style="
+        <h5 style="background-color: floralwhite; font-size: 130%; text-align: center;"> „IN ZIUA DE AZI, OAMENII NU MAI VOR DOAR SA SUPRAVIETUIASCA CI VOR SA TRAIASCA FRUMOS!” </h5>
+        <h5 style="
         text-align: center;
-"> Esti si tu unul dintre ei? Fa-ti o programare la BeautyClinique-Make you smile, pentru a-ti reincapata increderea si zambetul!</h5>
+">
+            Esti si tu unul dintre ei? Fa-ti o programare la BeautyClinique-Make you smile, pentru a-ti reincapata increderea si zambetul!
+        </h5>
 
-    <br />
+        <br />
+        <img class="img1" src="~/Images/sursa5.jpg">
 
-    <div style="align-content:center; margin-left:30%">
-        <a href="/appointments/calendar" class="btn btn-warning">Cand pot sa ma programez?</a>
-        <a href="/appointments/create" class="btn btn-warning">Rezerva acum!</a>
-        <a href="/appointments/myappointments" class="btn btn-warning">Programarile mele</a>
+        <br />
+        <br />
+        <br />
+      
+            <a href="/appointments/calendar" class="btn btn-primary btn-lg btn-block">Cand pot sa ma programez?</a>
+            <a href="/appointments/create" class="btn btn-secondary btn-lg btn-block">Rezerva acum!</a>
+            <a href="/appointments/myappointments" class="btn btn-primary btn-lg btn-block">Programarile mele</a>
 
 
 
 
-    </div>
         <br />
         <br />
     </div>
@@ -94,39 +305,39 @@
         <br />
         @{
             var sList = ViewData["generalServices"] as List<GeneralService>;
-                <ul>
+            <ul>
 
-                    @foreach (var serv in sList)
-                    {
-                    <li >
+                @foreach (var serv in sList)
+                {
+                    <li>
                         <p style="font-size: 130% ; color: darkgreen">  @serv.Name </p>
                         <p style="text-align: justify"> @serv.Description</p>
 
                     </li>
                     <br />
-                    }
-                </ul>
+                }
+            </ul>
         }
         <br />
     </div>
-    
 
 
-        <div>
 
-            <br />
-            <br />
+    <div>
 
-            <h2 class="jumbotron text-center">PROMISIUNEA NOASTRA</h2>
-            <h3 style=" text-align: center; background-color: antiquewhite"> "Ne-am propus să fim prima alegere a pacienților care se confruntă cu probleme dermatologice. De aceea, echipa noastră de medici este extrem de bine pregătită, iar aparatura este de ultimă generație."</h3>
+        <br />
+        <br />
 
-            <br />
-            <br />
+        <h2 class="jumbotron text-center">PROMISIUNEA NOASTRA</h2>
+        <h3 style=" text-align: center; background-color: antiquewhite"> "Ne-am propus să fim prima alegere a pacienților care se confruntă cu probleme dermatologice. De aceea, echipa noastră de medici este extrem de bine pregătită, iar aparatura este de ultimă generație."</h3>
 
-            <div style="align-content:center; margin-left:38%"> <img src="~/Images/sursa6.jpg" height="300px" width="400px"> </div>
+        <br />
+        <br />
 
-            <br />
-            <h3 style=" text-align: center;">Vino în clinica noastră și beneficiază de tratamente la cele mai înalte standarde!</h3>
-            <div style="align-content:center; margin-left:42%"> <a href="/appointments/create" class="btn btn-warning" style="align-content: center">Rezerva acum!</a> </div>
-        </div>
+        <img class="img1" src="~/Images/sursa6.jpg">
+
+        <br />
+        <h3 style=" text-align: center;">Vino în clinica noastră și beneficiază de tratamente la cele mai înalte standarde!</h3>
+        <a href="/appointments/create" class="btn btn-secondary btn-lg btn-block">Rezerva acum!</a>
+    </div>
 </body>
